@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\test-app\resources\views/futbol.blade.php ENDPATH**/ ?>
