@@ -1,0 +1,965 @@
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow-x: hidden;
+}
+
+.imagen-fondo {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+#logo {
+    float: left;
+    background-image: url('img/logo.png');
+    background-size: cover;
+    border-radius: 15px;
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #7cf178;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #bbebb9;
+  }
+  
+  .nav-btn.active {
+    background-color: #7cf178;
+  }
+  
+  #changeLanguageButton {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  #changeLanguageButton:hover {
+    background-color: #ffb400;
+  }
+  
+
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+a.active {
+
+    color: rgb(76, 223, 39);
+}
+
+a:hover {
+    color: #3da739;
+}
+
+
+@media screen and (max-width: 768px) {
+    #logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    #changeLanguageButton {
+        display: block;
+        margin: 10px;
+    }
+
+    header {
+        padding-bottom: 50px;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+
+    .menu-item {
+        display: block;
+    }
+
+    #toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+    }
+    #toggle:checked ~ .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; 
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px;
+    }
+
+    #toggle:checked + .nav-links a {
+        margin-bottom: 10px;
+    }
+    .column-deportes {
+        display: block;
+    } 
+    .column-deporte .sport-link {
+        width: 100%;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.3s ease-in-out;
+        color: inherit;
+    }
+    .contenedor-secciones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .seccion-elige {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: hidden;
+    }
+
+    .seccion-noticas {
+        order: 1;
+    }
+
+    .column-elige {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .column-elige h1 {
+        font-size: 20px;
+    }
+    .column-elige p {
+        font-size: 20px;
+    }
+
+
+    .seccion-contacto,
+    .seccion-trabajo {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .column-contactanos,
+    .column-trabajo {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .column-contactanos p,
+    .column-trabajo p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+}
+
+
+/* Cambios para tablets y pantallas más grandes */
+@media screen and (min-width: 768px) {
+    #logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    #changeLanguageButton {
+        display: none;
+    }
+
+    header {
+        padding-bottom: 0; /* Restaura el valor predeterminado */
+    }
+
+    nav a {
+        display: initial; /* Restaura el estilo de visualización */
+        padding: 10px;
+        margin: 0 10px;
+    }
+       /* Mostrar los botones de navegación */
+       .nav-links {
+        display: flex;
+    }
+
+    /* Ocultar el botón de hamburguesa */
+    .hamburger {
+        display: none;
+    }
+    .column-deportes {
+        display: block;
+    }
+
+    .column-deporte .sport-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.3s ease-in-out;
+        color: inherit;
+    }
+    
+}
+
+
+section {
+    padding: 20px;
+    background-color: #333;
+    margin-bottom: 20px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+
+/*COLUMNAS GENERALES*/
+
+#mapa-container {
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 300px; /* Ajusta la altura según sea necesario */
+    border: 0;
+}
+.contenedor-secciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.separador {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+    margin: 20px 0;
+    border: none;
+}
+
+.seccion-contacto,
+.seccion-trabajo {
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.column-elige,
+.column-noticias {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.column-contactanos,
+.column-trabajo {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tituloMapa{
+    font-size: 24;
+    color: white;
+    margin-left: 20px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+
+
+/* ELIGE EQUIPO */
+.seccion-elige {
+    background-color: #f8f8f8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 1000px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.column-elige h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.column-elige p {
+    color: #666;
+    font-size: 16px;
+}
+
+.column-elige li {
+    color: #444;
+}
+
+/* Estilos para los enlaces dentro de la sección "elige" */
+.seccion-elige a {
+    color: #007bff; /* Color del texto del enlace */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    transition: color 0.3s ease; /* Transición suave del color al pasar el ratón */
+}
+
+.seccion-elige a:hover {
+    color: #0056b3; /* Color del texto del enlace al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilos adicionales para los encabezados y párrafos dentro de la sección "elige" */
+.seccion-elige h1, .seccion-elige p {
+    margin-bottom: 10px; /* Añade espacio en la parte inferior */
+}
+
+/* Estilos específicos para los encabezados dentro de la sección "elige" */
+.seccion-elige h1 {
+    color: #333; /* Color del texto del encabezado */
+}
+
+/* Estilos para las listas dentro de la sección "elige" */
+.seccion-elige ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el relleno predeterminado de la lista */
+    margin: 0; /* Elimina el margen predeterminado de la lista */
+}
+
+/* Estilos para los elementos de lista dentro de la sección "elige" */
+.seccion-elige li {
+    margin-bottom: 5px; /* Añade espacio en la parte inferior de cada elemento de lista */
+}
+
+
+
+/*NOTICIAS */
+.seccion-noticas {
+    background-color: #333;
+    color: #fff;
+}
+
+.column-noticas h2 {
+    font-size: 24px;
+}
+
+.column-noticas p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-noticas {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.imagen-equipo {
+    width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-left: 10px; /* Ajusta el espacio a la izquierda del texto */
+    border-radius: 15px;
+    float: right; /* Hace que la imagen flote a la derecha del texto */
+}
+
+
+/* CONTACTANOS */
+.seccion-contacto {
+    background-color: #f8f8f8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.column-contactanos h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.column-contactanos p {
+    color: #666;
+    font-size: 16px;
+}
+
+.column-contactanos li {
+    color: #444;
+}
+
+/*TRABAJA CON NOSOTROS */
+.seccion-trabajo {
+    background-color: #333;
+    color: #fff;
+}
+
+.column-trabajo h2 {
+    font-size: 24px;
+}
+
+.column-trabajo p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-trabaja {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* DEPORTES */
+
+.tituloDeportes {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.column-deportes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+
+.column-deporte {
+    width: 400px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.column-deporte a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    color: inherit;
+}
+
+
+.column-deporte img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.column-deporte p {
+    margin: 10px 0;
+    font-family: 'TuFuente', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.column-deporte:hover {
+    transform: scale(0.95);
+}
+
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+select:hover {
+    border-color: #aaa;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+
+/*FUTBOL*/
+
+.titulo-seccion {
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.columns-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    background-color: #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.columnas-deportes {
+    width: 48%;
+    padding: 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: #dee2e0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.columnas-deportes:hover {
+    background-color: rgb(154, 187, 159);
+}
+
+
+.columnas-deportes h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.columnas-deportes p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.imagen-pequena {
+    width: 150px;
+    height: auto;
+    float: right;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+/*RESERVA*/
+.reserva-completa {
+    width: 350px;
+    margin: 100px auto;
+    padding: 10px;
+    background: #e0dfdf;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.reserva-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserva-button:hover {
+    background-color: #45a049;
+}
+
+.reserva-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-top: auto; /* Empuja el footer hacia el fondo de la página */
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    position: relative;
+}
+
+.show-password-icon {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
+
+/* ESTILOS FORMULARIO INICIO DE SESION */
+.register-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.register-form p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: #45a049;
+}
+
+/* ESTILOS FORMULARIO REGISTRO */
+.register-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.register-form input,
+.register-form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.register-form button:hover {
+    background-color: #45a049;
+}
+
+.register-form select {
+    background-color: #555;
+}
+
+/* Estilos adicionales para los enlaces dentro del formulario de registro */
+.register-form a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-form a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Estilos para los títulos de inicio de sesión y registro */
+.form-title {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+/* Estilos para el formulario de cerrar sesión */
+.logout-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.logout-form p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.logout-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.logout-form button:hover {
+    background-color: #45a049;
+}
+
+.perfil-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.perfil-section {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-heading {
+    margin-bottom: 20px;
+}
+
+.perfil-subheading {
+    margin-top: 20px;
+}
+
+.perfil-label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+.perfil-info {
+    margin: 10px 0;
+}
+
+.perfil-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.perfil-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.perfil-button:hover {
+    background-color: #555;
+}
+
+
+/* Estilos para la tabla de horas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    cursor: pointer;
+}
+
+.hora-seleccionada {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Estilo para las celdas que contienen las horas */
+tbody td:first-child {
+    color: white;
+}
+
+.hora-seleccionada {
+    background-color: #007bff;
+    color: white;
+}
+
+.hora-confirmada {
+    background-color: green;
+    color: white;
+}
+
+.hora-ocupada {
+    background-color: red;
+    color: white;
+}
+
